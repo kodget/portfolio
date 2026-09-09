@@ -7,33 +7,33 @@ import { useState } from "react";
 
 const credentials = [
   {
-    year: "2026",
+    year: "2025",
     title: "ALX ProDev",
-    subtitle: "Frontend Engineering",
-    link: "https://example.com/alx-prodev"
+    subtitle: "ALX Academy",
+    link: "#"
   },
   {
-    year: "2026",
+    year: "2025",
     title: "ALX Professional Foundations",
-    subtitle: "",
-    link: "https://example.com/alx-foundations"
+    subtitle: "ALX Academy",
+    link: "#"
   },
   {
-    year: "2026",
-    title: "McKinsey Forward",
-    subtitle: "",
-    link: "https://example.com/mckinsey"
-  },
-  {
-    year: "2026",
+    year: "2024",
     title: "English for IT 1",
     subtitle: "Cisco Networking Academy",
     link: "#"
   },
   {
-    year: "2026",
+    year: "2024",
     title: "English for IT 2",
     subtitle: "Cisco Networking Academy",
+    link: "#"
+  },
+  {
+    year: "2024",
+    title: "McKinsey Forward Program",
+    subtitle: "McKinsey",
     link: "#"
   }
 ];

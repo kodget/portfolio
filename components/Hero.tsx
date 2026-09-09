@@ -95,10 +95,10 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 2.8, duration: 0.8 }}
         >
-          <SocialIcon icon={XIcon} href="https://x.com" />
-          <SocialIcon icon={LinkedinIcon} href="https://linkedin.com" />
+          <SocialIcon icon={XIcon} href="https://x.com/ibuildstuffs" />
+          <SocialIcon icon={LinkedinIcon} href="https://www.linkedin.com/in/muhammad-ajuwon-242698260/" />
           <SocialIcon icon={GithubIcon} href="https://github.com/kodget" />
-          <SocialIcon icon={BookOpen} href="https://hashnode.com" />
+          <SocialIcon icon={BookOpen} href="https://hashnode.com/@ibuildstuffs" />
         </motion.div>
         
         <motion.h2 

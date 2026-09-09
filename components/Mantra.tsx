@@ -18,7 +18,7 @@ export function Mantra() {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nWhat I want to build:\n${formData.project}\n\nAdditional Information:\n${formData.other}`
     );
-    window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:ajuwonmuhammad99@gmail.com?subject=${subject}&body=${body}`;
   };
   return (
     <section id="contact" className="bg-[var(--color-ink)] text-[var(--color-off-white)] py-16 md:py-24 flex flex-col justify-between min-h-screen">
@@ -128,13 +128,13 @@ export function Mantra() {
       <footer className="grid-container pt-16 md:pt-24 pb-12 mt-auto">
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-[var(--color-slate)] pt-8">
           <div className="flex items-center space-x-8 mb-8 md:mb-0">
-            <a href="mailto:hello@example.com" className="micro text-[var(--color-slate)] hover:text-[var(--color-brand)] transition-colors flex items-center">
+            <a href="mailto:ajuwonmuhammad99@gmail.com" className="micro text-[var(--color-slate)] hover:text-[var(--color-brand)] transition-colors flex items-center">
               EMAIL <ArrowUpRight className="w-3 h-3 ml-1" />
             </a>
-            <a href="https://linkedin.com" className="micro text-[var(--color-slate)] hover:text-[var(--color-brand)] transition-colors flex items-center">
+            <a href="https://www.linkedin.com/in/muhammad-ajuwon-242698260/" className="micro text-[var(--color-slate)] hover:text-[var(--color-brand)] transition-colors flex items-center">
               LINKEDIN <ArrowUpRight className="w-3 h-3 ml-1" />
             </a>
-            <a href="https://github.com" className="micro text-[var(--color-slate)] hover:text-[var(--color-brand)] transition-colors flex items-center">
+            <a href="https://github.com/kodget" className="micro text-[var(--color-slate)] hover:text-[var(--color-brand)] transition-colors flex items-center">
               GITHUB <ArrowUpRight className="w-3 h-3 ml-1" />
             </a>
           </div>

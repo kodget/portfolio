@@ -17,67 +17,94 @@ type Skill = {
 
 const skills: Skill[] = [
   {
-    id: "nextjs",
-    name: "Next.js",
-    years: "03 years",
-    level: "Advanced",
-    description: "Building production-ready, server-rendered applications and API routes.",
-    icon: Layout,
-    position: "top-[10%] left-[10%]"
-  },
-  {
-    id: "graphql",
-    name: "GraphQL",
-    years: "02 years",
-    level: "Intermediate",
-    description: "Designing efficient data fetching APIs and schemas.",
-    icon: Database,
-    position: "top-[15%] right-[15%]"
-  },
-  {
-    id: "typescript",
-    name: "TypeScript",
-    years: "04 years",
-    level: "Advanced",
-    description: "Writing strictly typed, scalable frontend architecture.",
-    icon: Code2,
-    position: "top-[40%] left-[30%]"
-  },
-  {
     id: "react",
     name: "React",
-    years: "04 years",
+    years: "03 years",
     level: "Advanced",
     description: "I use React to build complex interactive product interfaces.",
     icon: Layout,
     position: "bottom-[30%] right-[10%]"
   },
   {
-    id: "figma",
-    name: "Figma",
-    years: "03 years",
+    id: "nextjs",
+    name: "Next.js",
+    years: "02 years",
+    level: "Advanced",
+    description: "Building production-ready, server-rendered applications and API routes.",
+    icon: Layout,
+    position: "top-[10%] left-[10%]"
+  },
+  {
+    id: "reactnative",
+    name: "React Native",
+    years: "01 year",
     level: "Intermediate",
-    description: "Translating wireframes into high-fidelity component libraries.",
-    icon: PenTool,
-    position: "bottom-[40%] left-[5%]"
+    description: "Building cross-platform mobile experiences.",
+    icon: Smartphone,
+    position: "bottom-[10%] right-[30%]"
+  },
+  {
+    id: "typescript",
+    name: "TypeScript",
+    years: "01 year",
+    level: "Advanced",
+    description: "Writing strictly typed, scalable frontend architecture.",
+    icon: Code2,
+    position: "top-[40%] left-[30%]"
+  },
+  {
+    id: "javascript",
+    name: "JavaScript",
+    years: "04 years",
+    level: "Advanced",
+    description: "Deep understanding of core JS and async programming.",
+    icon: Code2,
+    position: "top-[25%] right-[25%]"
+  },
+  {
+    id: "graphql",
+    name: "GraphQL",
+    years: "01 year",
+    level: "Intermediate",
+    description: "Designing efficient data fetching APIs and schemas.",
+    icon: Database,
+    position: "top-[15%] right-[15%]"
   },
   {
     id: "rest",
     name: "REST API",
-    years: "04 years",
+    years: "03 years",
     level: "Advanced",
     description: "Integrating and consuming traditional backend services.",
     icon: Server,
     position: "bottom-[15%] left-[40%]"
   },
   {
-    id: "reactnative",
-    name: "React Native",
-    years: "02 years",
+    id: "figma",
+    name: "Figma",
+    years: "01 year",
     level: "Intermediate",
-    description: "Building cross-platform mobile experiences.",
-    icon: Smartphone,
-    position: "bottom-[10%] right-[30%]"
+    description: "Translating wireframes into high-fidelity component libraries.",
+    icon: PenTool,
+    position: "bottom-[40%] left-[5%]"
+  },
+  {
+    id: "sass",
+    name: "Sass",
+    years: "03 years",
+    level: "Advanced",
+    description: "Writing modular and maintainable CSS pre-processor styling.",
+    icon: PenTool,
+    position: "bottom-[20%] left-[20%]"
+  },
+  {
+    id: "tailwindcss",
+    name: "Tailwind CSS",
+    years: "03 years",
+    level: "Advanced",
+    description: "Rapidly building custom user interfaces with utility classes.",
+    icon: PenTool,
+    position: "top-[30%] left-[40%]"
   },
   {
     id: "git",
@@ -100,11 +127,20 @@ const skills: Skill[] = [
   {
     id: "vercel",
     name: "Vercel",
-    years: "03 years",
+    years: "02 years",
     level: "Intermediate",
     description: "Deploying and managing frontend infrastructure.",
     icon: Triangle,
     position: "bottom-[35%] left-[35%]"
+  },
+  {
+    id: "threejs",
+    name: "three.js",
+    years: "01 year",
+    level: "Intermediate",
+    description: "Creating 3D web graphics and interactive animations.",
+    icon: Layout,
+    position: "bottom-[5%] right-[5%]"
   }
 ];
 
@@ -172,6 +208,7 @@ export function Capabilities() {
             <li>Git</li>
             <li>GitHub</li>
             <li>Vercel</li>
+            <li>three.js</li>
           </ul>
         </div>
       </div>
