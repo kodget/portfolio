@@ -17,14 +17,27 @@ export const metadata: Metadata = {
   description: "Frontend Engineer. Medical Student. Builder.",
 };
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { Navbar } from "@/components/Navbar";
+import { CustomCursor } from "@/components/CustomCursor";
+import { AuraBackground } from "@/components/AuraBackground";
+import { Preloader } from "@/components/Preloader";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${outfit.variable} ${inter.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-[var(--surface)] px-4 md:px-8 lg:px-12">
-        {children}
+        <ThemeProvider>
+          <Preloader />
+          <CustomCursor />
+          <AuraBackground />
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

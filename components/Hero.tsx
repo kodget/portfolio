@@ -23,19 +23,31 @@ export function Hero() {
       <div className="flex flex-col items-center z-10 w-full mt-16 md:mt-0">
         
         {/* Name (Centered, Bold) */}
-        <motion.h1 
-          className="display-xl text-center text-[var(--text-primary)] leading-[0.85] mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          MUHAMMAD<br />
-          AJUWON
-        </motion.h1>
+        <div className="flex flex-col items-center mb-12 text-reveal z-20">
+          {["MUHAMMAD", "AJUWON"].map((word, wordIndex) => (
+            <div key={word} className="flex overflow-hidden">
+              {word.split("").map((letter, i) => (
+                <motion.h1
+                  key={i}
+                  className="text-[18vw] md:text-[14vw] lg:text-[13vw] font-display font-bold text-center text-[var(--text-primary)] leading-[0.85] tracking-tighter"
+                  initial={{ y: "100%", opacity: 0, rotate: 10 }}
+                  animate={{ y: 0, opacity: 1, rotate: 0 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    ease: [0.16, 1, 0.3, 1],
+                    delay: 2.2 + (wordIndex * 0.1) + (i * 0.05) // Delays after preloader
+                  }}
+                >
+                  {letter}
+                </motion.h1>
+              ))}
+            </div>
+          ))}
+        </div>
 
         {/* Profile Picture (Centered) */}
         <motion.div
-          className="relative w-full max-w-[280px] md:max-w-[320px] aspect-[4/5] rounded-[28px] overflow-hidden border border-[var(--border)] cursor-pointer mb-12"
+          className="magnetic relative w-full max-w-[280px] md:max-w-[320px] aspect-[4/5] rounded-[28px] overflow-hidden border border-[var(--border)] cursor-none mb-12 z-20"
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
           whileHover={{ 
@@ -73,10 +85,10 @@ export function Hero() {
 
         {/* Social Media Links (Icons, Centered) */}
         <motion.div 
-          className="flex items-center justify-center space-x-6 md:space-x-8"
+          className="flex items-center justify-center space-x-6 md:space-x-8 z-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
+          transition={{ delay: 2.8, duration: 0.8 }}
         >
           <SocialIcon icon={XIcon} href="https://x.com" />
           <SocialIcon icon={LinkedinIcon} href="https://linkedin.com" />
@@ -85,10 +97,10 @@ export function Hero() {
         </motion.div>
         
         <motion.h2 
-          className="micro text-[var(--text-secondary)] tracking-widest uppercase mt-8 text-center"
+          className="micro text-[var(--text-secondary)] tracking-widest uppercase mt-8 text-center z-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          transition={{ delay: 2.9, duration: 0.8 }}
         >
           Frontend Engineer
         </motion.h2>
@@ -96,10 +108,10 @@ export function Hero() {
       </div>
 
       {/* Bottom Row */}
-      <div className="w-full flex flex-col md:flex-row justify-between items-center mt-24">
+      <div className="w-full flex flex-col md:flex-row justify-between items-center mt-24 z-20">
         <Link 
           href="/resume.pdf" 
-          className="group inline-flex flex-col items-start p-4 rounded-lg hover:bg-[var(--color-brand)]/5 transition-colors duration-300 mb-8 md:mb-0"
+          className="magnetic group inline-flex flex-col items-start p-4 rounded-lg hover:bg-[var(--color-brand)]/5 transition-colors duration-300 mb-8 md:mb-0 cursor-none"
         >
           <div className="flex items-center text-[var(--text-primary)] font-display font-medium leading-none mb-1">
             DOWNLOAD
@@ -126,7 +138,7 @@ function SocialIcon({ icon: Icon, href }: { icon: any; href: string }) {
   return (
     <Link 
       href={href} 
-      className="text-[var(--text-secondary)] hover:text-[var(--color-brand)] transition-colors duration-300 p-2"
+      className="magnetic text-[var(--text-secondary)] hover:text-[var(--color-brand)] transition-colors duration-300 p-2 cursor-none"
       target="_blank"
       rel="noopener noreferrer"
     >

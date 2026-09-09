@@ -53,13 +53,13 @@ export function Healthtech() {
         </div>
 
         {/* Floating Clinical Panels */}
-        <div className="relative min-h-[800px] w-full">
+        <div className="relative md:min-h-[900px] w-full flex flex-col md:block space-y-8 md:space-y-0">
           
           <ClinicalPanel 
             title="ILERAI"
             subtitle="ACCESS TO CARE"
             description="Digital access to care for underserved populations."
-            position="left-0 top-0"
+            position="md:left-0 md:top-0"
             delay={0}
           />
 
@@ -67,7 +67,7 @@ export function Healthtech() {
             title="PHARMCHAIN"
             subtitle="DRUG AUTHENTICATION"
             description="A drug-counterfeit detection system."
-            position="right-0 md:right-[10%] top-[150px]"
+            position="md:right-0 md:right-[10%] md:top-[150px]"
             delay={0.2}
           />
 
@@ -75,13 +75,13 @@ export function Healthtech() {
             title="MAMASAFE"
             subtitle="MEDICATION SAFETY"
             description="Medication safety and clinical decision support."
-            position="left-0 md:left-[20%] top-[400px]"
+            position="md:left-0 md:left-[20%] md:top-[400px]"
             delay={0.4}
           />
 
           {/* Materna (Highlight Panel) */}
           <motion.div 
-            className="absolute left-0 md:left-auto md:right-0 top-[650px] w-full md:w-[600px] bg-[var(--color-white)] border border-[var(--color-mist)] p-8 md:p-12 shadow-[0_20px_40px_rgba(0,104,112,0.08)] rounded-xl"
+            className="relative md:absolute md:left-auto md:right-0 md:top-[650px] w-full md:w-[600px] bg-[var(--color-white)] border border-[var(--color-mist)] p-8 md:p-12 shadow-[0_20px_40px_rgba(0,104,112,0.08)] rounded-xl z-20 mt-8 md:mt-0"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -113,7 +113,7 @@ export function Healthtech() {
 function ClinicalPanel({ title, subtitle, description, position, delay }: { title: string, subtitle: string, description: string, position: string, delay: number }) {
   return (
     <motion.div 
-      className={`absolute ${position} w-[300px] md:w-[380px] bg-[var(--color-off-white)] border border-[var(--color-brand-soft)]/30 p-6 shadow-sm`}
+      className={`relative md:absolute ${position} w-full md:w-[380px] bg-[var(--color-off-white)] border border-[var(--color-brand-soft)]/30 p-6 shadow-sm z-10`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}

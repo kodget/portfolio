@@ -43,28 +43,26 @@
   --border: var(--color-mist);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--color-ink);
-    --surface: var(--color-black);
-    --surface-secondary: var(--color-charcoal);
-    
-    --foreground: var(--color-off-white);
-    --text-primary: var(--color-off-white);
-    --text-secondary: #A7A7A2;
-    --text-muted: var(--color-slate);
+:root[data-theme='dark'] {
+  --background: var(--color-ink);
+  --surface: var(--color-black);
+  --surface-secondary: var(--color-charcoal);
+  
+  --foreground: var(--color-off-white);
+  --text-primary: var(--color-off-white);
+  --text-secondary: #A7A7A2;
+  --text-muted: var(--color-slate);
 
-    --border: var(--color-graphite);
+  --border: var(--color-graphite);
 
-    /* Dark mode teal inversion (slightly brighter) */
-    --color-brand: var(--color-brand-soft);
-    --color-brand-deep: var(--color-brand-teal);
-    --color-brand-active: var(--color-brand-active);
-    --color-brand-soft: var(--color-brand-deep);
-    
-    --color-cream: var(--color-charcoal);
-    --color-cream-soft: var(--color-black);
-  }
+  /* Dark mode teal inversion (slightly brighter) */
+  --color-brand: var(--color-brand-soft);
+  --color-brand-deep: var(--color-brand-active);
+  --color-brand-active: var(--color-brand-soft);
+  --color-brand-soft: var(--color-brand-deep);
+  
+  --color-cream: var(--color-charcoal);
+  --color-cream-soft: var(--color-black);
 }
 
 @layer base {
@@ -74,6 +72,12 @@
     @apply font-sans;
     line-height: 1.6;
     letter-spacing: normal;
+  }
+
+  @media (pointer: fine) {
+    body, a, button, input, textarea, select, [role="button"] {
+      cursor: none !important;
+    }
   }
 
   /* Headings rules */

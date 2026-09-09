@@ -21,7 +21,7 @@ export function Mantra() {
     window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
   };
   return (
-    <section className="bg-[var(--color-ink)] text-[var(--color-off-white)] py-16 md:py-24 flex flex-col justify-between min-h-screen">
+    <section id="contact" className="bg-[var(--color-ink)] text-[var(--color-off-white)] py-16 md:py-24 flex flex-col justify-between min-h-screen">
       <div className="grid-container flex-1 flex flex-col justify-center">
         
         <motion.div
