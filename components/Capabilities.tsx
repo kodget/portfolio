@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Code2, Database, Layout, PenTool, Server, Smartphone } from "lucide-react";
+import { Code2, Database, Layout, PenTool, Server, Smartphone, GitBranch, Triangle } from "lucide-react";
+import { GithubIcon } from "./Hero";
 
 type Skill = {
   id: string;
@@ -77,6 +78,33 @@ const skills: Skill[] = [
     description: "Building cross-platform mobile experiences.",
     icon: Smartphone,
     position: "bottom-[10%] right-[30%]"
+  },
+  {
+    id: "git",
+    name: "Git",
+    years: "04 years",
+    level: "Advanced",
+    description: "Version control, branching strategies, and collaborative workflows.",
+    icon: GitBranch,
+    position: "top-[45%] right-[35%]"
+  },
+  {
+    id: "github",
+    name: "GitHub",
+    years: "04 years",
+    level: "Advanced",
+    description: "Source code management and CI/CD.",
+    icon: GithubIcon,
+    position: "top-[10%] right-[40%]"
+  },
+  {
+    id: "vercel",
+    name: "Vercel",
+    years: "03 years",
+    level: "Intermediate",
+    description: "Deploying and managing frontend infrastructure.",
+    icon: Triangle,
+    position: "bottom-[35%] left-[35%]"
   }
 ];
 
@@ -84,7 +112,7 @@ export function Capabilities() {
   const [lockedId, setLockedId] = useState<string | null>(null);
 
   return (
-    <section id="capabilities" className="grid-container py-32 md:py-48">
+    <section id="capabilities" className="grid-container py-16 md:py-24">
       <div className="mb-24">
         <span className="micro text-[var(--text-secondary)] tracking-widest uppercase mb-4 block">
           05 / TECHNICAL CAPABILITY
@@ -95,7 +123,7 @@ export function Capabilities() {
       </div>
 
       {/* The Chaotic Field */}
-      <div className="relative w-full h-[600px] md:h-[800px] border border-[var(--border)] bg-[var(--surface-secondary)]/30 rounded-xl overflow-hidden mb-32">
+      <div className="relative w-full h-[600px] md:h-[800px] border border-[var(--border)] bg-[var(--surface-secondary)]/30 rounded-xl overflow-hidden mb-16 md:mb-24">
         {skills.map((skill) => (
           <ChaoticBox 
             key={skill.id} 
@@ -136,6 +164,14 @@ export function Capabilities() {
             <li>Figma</li>
             <li>Sass</li>
             <li>Tailwind CSS</li>
+          </ul>
+        </div>
+        <div className="col-span-12 md:col-span-4 lg:col-span-3 mb-12">
+          <h4 className="micro text-[var(--text-secondary)] tracking-widest uppercase mb-6">DEVOPS & TOOLS</h4>
+          <ul className="space-y-3 body-base text-[var(--text-primary)] font-medium">
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Vercel</li>
           </ul>
         </div>
       </div>

@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Stethoscope, Syringe, Pill, HeartPulse, Microscope, TestTube, Cross, Activity, ClipboardPlus, FlaskConical, Dna, Bandage, Bone, Ambulance } from "lucide-react";
 
 export function Healthtech() {
   return (
-    <section id="healthcare" className="relative bg-[var(--color-cream)] overflow-hidden py-32 md:py-48 min-h-screen">
+    <section id="healthcare" className="relative bg-[var(--color-cream)] overflow-hidden py-16 md:py-24 min-h-screen">
       
       {/* Abstract Clinical Interface Background */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -19,10 +20,30 @@ export function Healthtech() {
           <line x1="50" y1="0" x2="50" y2="100%" strokeDasharray="4 4" strokeWidth="1" />
           <line x1="80vw" y1="0" x2="80vw" y2="100%" strokeDasharray="4 4" strokeWidth="1" />
         </svg>
+
+        {/* Scattered Clinical Icons */}
+        <div className="absolute inset-0 opacity-40 text-[var(--color-brand)]">
+          <Stethoscope className="absolute top-[5%] left-[5%] w-32 h-32 rotate-12" />
+          <Syringe className="absolute top-[25%] right-[10%] w-24 h-24 -rotate-45" />
+          <Pill className="absolute bottom-[20%] left-[15%] w-20 h-20 rotate-45" />
+          <HeartPulse className="absolute top-[50%] right-[25%] w-40 h-40 rotate-12 opacity-60" />
+          <Microscope className="absolute bottom-[10%] right-[10%] w-28 h-28 -rotate-12" />
+          <TestTube className="absolute top-[35%] left-[20%] w-16 h-16 rotate-45" />
+          <Cross className="absolute top-[10%] right-[35%] w-20 h-20 rotate-12" />
+          
+          {/* Newly added items */}
+          <Activity className="absolute top-[70%] left-[8%] w-28 h-28 -rotate-12" />
+          <ClipboardPlus className="absolute bottom-[30%] right-[15%] w-24 h-24 rotate-6" />
+          <FlaskConical className="absolute top-[15%] left-[30%] w-20 h-20 -rotate-12" />
+          <Dna className="absolute top-[40%] right-[40%] w-32 h-32 rotate-90 opacity-50" />
+          <Bandage className="absolute bottom-[5%] left-[40%] w-16 h-16 rotate-45" />
+          <Bone className="absolute top-[80%] right-[45%] w-20 h-20 -rotate-45" />
+          <Ambulance className="absolute top-[20%] right-[20%] w-32 h-32 rotate-6 opacity-30" />
+        </div>
       </div>
 
       <div className="grid-container relative z-10">
-        <div className="mb-32">
+        <div className="mb-16 md:mb-24">
           <span className="micro text-[var(--color-brand-deep)] tracking-widest uppercase mb-4 block">
             04 / HEALTHCARE
           </span>

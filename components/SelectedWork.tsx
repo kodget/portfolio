@@ -49,7 +49,7 @@ const projects = [
 
 export function SelectedWork() {
   return (
-    <section id="work" className="grid-container py-32 md:py-48">
+    <section id="work" className="grid-container py-16 md:py-24">
       <div className="mb-24">
         <span className="micro text-[var(--text-secondary)] tracking-widest uppercase mb-4 block">
           03 / SELECTED WORK
@@ -59,7 +59,7 @@ export function SelectedWork() {
         </h2>
       </div>
 
-      <div className="flex flex-col space-y-32">
+      <div className="flex flex-col space-y-16 md:space-y-24">
         {projects.map((project, index) => (
           <ProjectRow key={project.id} project={project} index={index} />
         ))}

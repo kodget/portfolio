@@ -23,12 +23,24 @@ const credentials = [
     title: "McKinsey Forward",
     subtitle: "",
     link: "https://example.com/mckinsey"
+  },
+  {
+    year: "2026",
+    title: "English for IT 1",
+    subtitle: "Cisco Networking Academy",
+    link: "#"
+  },
+  {
+    year: "2026",
+    title: "English for IT 2",
+    subtitle: "Cisco Networking Academy",
+    link: "#"
   }
 ];
 
 export function Credentials() {
   return (
-    <section id="credentials" className="grid-container py-32 md:py-48">
+    <section id="credentials" className="grid-container py-16 md:py-24">
       <div className="mb-24">
         <span className="micro text-[var(--text-secondary)] tracking-widest uppercase mb-4 block">
           06 / CREDENTIALS

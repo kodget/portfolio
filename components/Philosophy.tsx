@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function Philosophy() {
   return (
-    <section id="about" className="grid-container py-32 md:py-48 flex flex-col justify-center">
+    <section id="about" className="grid-container py-16 md:py-24 flex flex-col justify-center">
       {/* Thesis Statement */}
       <div className="max-w-[1200px] mb-24">
         <motion.h2 
