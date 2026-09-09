@@ -50,20 +50,20 @@ export function CustomCursor() {
   const variants = {
     default: {
       scale: 1,
-      backgroundColor: "white",
-      border: "0px solid transparent",
+      backgroundColor: "rgba(255, 255, 255, 1)",
+      border: "0px solid rgba(255, 255, 255, 0)",
       mixBlendMode: "difference" as const,
     },
     link: {
       scale: 3, // 16 * 3 = 48px
-      backgroundColor: "transparent",
-      border: "1px solid white", // Scales up visually to ~3px
+      backgroundColor: "rgba(255, 255, 255, 0)",
+      border: "1px solid rgba(255, 255, 255, 1)", // Scales up visually to ~3px
       mixBlendMode: "difference" as const,
     },
     text: {
       scale: 9, // ~144px
-      backgroundColor: "white",
-      border: "0px solid transparent",
+      backgroundColor: "rgba(255, 255, 255, 1)",
+      border: "0px solid rgba(255, 255, 255, 0)",
       mixBlendMode: "difference" as const,
     }
   };

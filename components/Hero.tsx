@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowDown, BookOpen } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export function Hero() {
@@ -63,11 +64,15 @@ export function Hero() {
             animate={{ scale: isHovered ? 1.05 : 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div 
-              className="w-full h-full bg-gradient-to-b from-stone-400 to-stone-800 transition-all duration-700 ease-out"
+            <Image
+              src="/images/profilephoto.png"
+              alt="Muhammad Ajuwon"
+              fill
+              className="object-cover transition-all duration-700 ease-out"
               style={{
                 filter: isHovered ? "grayscale(0%) contrast(1.1)" : "grayscale(90%) contrast(1.2) sepia(10%) hue-rotate(180deg)",
               }}
+              priority
             />
           </motion.div>
 
