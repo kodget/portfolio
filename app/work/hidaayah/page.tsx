@@ -1,0 +1,163 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { NavigationSignal } from "@/components/NavigationSignal";
+import { CustomCursor } from "@/components/CustomCursor";
+
+const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+    className={className}
+  >
+    {children}
+  </motion.div>
+);
+
+export default function HidaayahCaseStudy() {
+  return (
+    <main className="bg-[var(--color-cream-soft)] min-h-screen text-[var(--text-primary)] selection:bg-[var(--color-brand)] selection:text-[var(--color-off-white)] relative pb-32 overflow-hidden">
+      <CustomCursor />
+      <NavigationSignal />
+      
+      {/* Top Nav */}
+      <div className="fixed top-0 w-full z-50 p-6 mix-blend-difference text-white pointer-events-none">
+        <div className="flex justify-between items-center max-w-7xl mx-auto">
+          <Link href="/#work" className="pointer-events-auto magnetic flex items-center gap-2 hover:opacity-70 transition-opacity">
+            <ArrowLeft className="w-5 h-5" />
+            <span className="font-display font-bold uppercase tracking-widest text-sm">Back</span>
+          </Link>
+        </div>
+      </div>
+
+      <div className="grid-container pt-32 md:pt-48">
+        
+        {/* 01 - HERO */}
+        <header className="mb-32">
+          <FadeIn>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter mb-6">Hidaayah</h1>
+            <p className="text-2xl md:text-3xl text-[var(--text-secondary)] font-display max-w-3xl leading-tight mb-16">
+              Designing a calmer digital space for consistency, reflection, and connection.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.2} className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24 py-8 border-y border-[var(--border)]">
+            <div>
+              <span className="micro text-[var(--text-muted)] block mb-2">ROLE</span>
+              <span className="text-sm">Product Strategy<br/>Product Design<br/>Frontend Engineering</span>
+            </div>
+            <div>
+              <span className="micro text-[var(--text-muted)] block mb-2">CONTRIBUTION</span>
+              <span className="text-sm">Design System<br/>Homepage, Landing Page<br/>Quran Garden</span>
+            </div>
+            <div>
+              <span className="micro text-[var(--text-muted)] block mb-2">COLLABORATION</span>
+              <span className="text-sm">Worked with another engineer responsible<br/>for API integration and the AI interface.</span>
+            </div>
+            <div>
+              <span className="micro text-[var(--text-muted)] block mb-2">LINKS</span>
+              <div className="flex flex-col gap-1">
+                <Link href="#" className="text-sm flex items-center hover:text-[var(--color-brand)] transition-colors magnetic w-fit">Live Product <ArrowUpRight className="w-3 h-3 ml-1"/></Link>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* HERO VISUAL */}
+          <FadeIn delay={0.4} className="relative w-full aspect-[4/5] md:aspect-[16/10] rounded-2xl md:rounded-[2rem] border border-[var(--border)] overflow-hidden flex items-center justify-center bg-[var(--surface)]">
+            <div className="relative w-full h-full">
+              <Image 
+                src="/images/project-screenshots/hidaayah/hidaayah-1.png" 
+                alt="Hidaayah Interface" 
+                fill 
+                className="object-cover object-center"
+              />
+            </div>
+          </FadeIn>
+        </header>
+
+        {/* 02 - THE PROBLEM */}
+        <section className="grid-12 mb-24 md:mb-32">
+          <div className="col-span-12 md:col-span-4 mb-8 md:mb-0">
+            <span className="micro text-[var(--text-muted)] sticky top-32">02 — THE PROBLEM</span>
+          </div>
+          <div className="col-span-12 md:col-span-8 lg:col-span-6">
+            <FadeIn>
+              <h3 className="text-2xl md:text-3xl font-display font-medium leading-tight mb-8">The challenge was not simply giving users more features. It was making it easier to return.</h3>
+              <div className="space-y-6 text-[var(--text-secondary)] text-lg leading-relaxed">
+                <p>Maintaining consistency with the Qur'an can be difficult, especially when the digital environments people use every day are designed to compete aggressively for their attention.</p>
+                <p>Through Hidaayah, we wanted to explore a different use of technology: creating a space that could support consistency while also helping people feel connected to a wider Qur'an-centred community.</p>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* 03 - THE SOLUTION */}
+        <section className="grid-12 mb-24 md:mb-32">
+          <div className="col-span-12 md:col-span-4 mb-8 md:mb-0">
+            <span className="micro text-[var(--text-muted)] sticky top-32">03 — THE SOLUTION</span>
+          </div>
+          <div className="col-span-12 md:col-span-8 lg:col-span-6">
+            <FadeIn>
+              <h3 className="text-2xl md:text-3xl font-display font-medium leading-tight mb-8">Technology should reduce the friction between the intention to engage with the Qur'an and actually doing it.</h3>
+              <div className="space-y-6 text-[var(--text-secondary)] text-lg leading-relaxed mb-8">
+                <p>I helped shape and design Hidaayah as a digital experience centred around engagement, consistency, and community. My work included defining the overall design system and building key parts of the frontend experience, including the landing page, homepage, and Quran Garden.</p>
+                <p>Every part of the interface needed to support that journey without demanding unnecessary attention from the user.</p>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* 04 - THE CHALLENGE */}
+        <section className="grid-12 mb-24 md:mb-32">
+          <div className="col-span-12 md:col-span-4 mb-8 md:mb-0">
+            <span className="micro text-[var(--text-muted)] sticky top-32">04 — THE CHALLENGE</span>
+          </div>
+          <div className="col-span-12 md:col-span-8 lg:col-span-6">
+            <FadeIn>
+              <h3 className="text-2xl md:text-3xl font-display font-medium leading-tight mb-8">Translating deeply personal and religious needs into useful product experiences.</h3>
+              <div className="space-y-6 text-[var(--text-secondary)] text-lg leading-relaxed">
+                <p>A product designed around the Qur'an cannot simply borrow every engagement pattern used by mainstream consumer applications. More interaction does not necessarily mean a better experience.</p>
+                <p>I had to think carefully about hierarchy, pacing, and visual noise—particularly while building an experience that also had to accommodate community features and AI-powered interactions.</p>
+                <p>The goal was to create something capable enough to be useful, while remaining calm enough that the interface never became the focus.</p>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* 05 - OUTCOME */}
+        <section className="grid-12 mb-32">
+          <div className="col-span-12 md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-5">
+            <FadeIn>
+              <div className="p-8 md:p-12 bg-[var(--surface-secondary)] rounded-2xl border border-[var(--border)]">
+                <p className="text-xl md:text-2xl font-display text-[var(--text-primary)] leading-tight mb-6">Hidaayah became one of my most important lessons in intentional product design.</p>
+                <p className="text-[var(--text-secondary)] text-lg mb-8">
+                  It reinforced the idea that good frontend work is not always about making users interact with more things. Sometimes the best interface is the one that removes enough friction for the user to focus on what they came for.
+                </p>
+                <div className="pt-8 border-t border-[var(--border)]">
+                  <p className="text-sm text-[var(--text-muted)] uppercase tracking-widest mb-4">The takeaway</p>
+                  <p className="text-xl font-display text-[var(--color-brand)]">For me, Hidaayah was an exercise in designing technology that knows when to support the experience—and when to step out of the way.</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+        
+        {/* Footer Navigation */}
+        <section className="border-t border-[var(--border)] py-12 flex justify-between items-center">
+          <Link href="/#work" className="magnetic flex items-center gap-2 hover:text-[var(--color-brand)] transition-colors">
+            <ArrowLeft className="w-5 h-5" />
+            <span className="font-display uppercase tracking-widest text-sm">Back to Work</span>
+          </Link>
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="magnetic flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors">
+            <span className="font-display uppercase tracking-widest text-sm">Back to Top</span>
+          </button>
+        </section>
+      </div>
+    </main>
+  );
+}

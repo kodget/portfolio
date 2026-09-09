@@ -1,14 +1,16 @@
+import dynamic from 'next/dynamic';
 import { Hero } from "@/components/Hero";
 import { Philosophy } from "@/components/Philosophy";
-import { SelectedWork } from "@/components/SelectedWork";
-import { Healthtech } from "@/components/Healthtech";
-import { Capabilities } from "@/components/Capabilities";
-import { Credentials } from "@/components/Credentials";
-import { HumanSide } from "@/components/HumanSide";
-import { HowIWork } from "@/components/HowIWork";
-import { OtherThings } from "@/components/OtherThings";
-import { Mantra } from "@/components/Mantra";
 import { NavigationSignal } from "@/components/NavigationSignal";
+
+const SelectedWork = dynamic(() => import("@/components/SelectedWork").then(mod => mod.SelectedWork));
+const Healthtech = dynamic(() => import("@/components/Healthtech").then(mod => mod.Healthtech));
+const Capabilities = dynamic(() => import("@/components/Capabilities").then(mod => mod.Capabilities));
+const Credentials = dynamic(() => import("@/components/Credentials").then(mod => mod.Credentials));
+const HumanSide = dynamic(() => import("@/components/HumanSide").then(mod => mod.HumanSide));
+const HowIWork = dynamic(() => import("@/components/HowIWork").then(mod => mod.HowIWork));
+const OtherThings = dynamic(() => import("@/components/OtherThings").then(mod => mod.OtherThings));
+const Mantra = dynamic(() => import("@/components/Mantra").then(mod => mod.Mantra));
 
 export default function Home() {
   return (
