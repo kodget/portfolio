@@ -1,26 +1,156 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-ink: #0A0A0A;
+  --color-black: #111111;
+  --color-charcoal: #1A1A1A;
+  --color-graphite: #292929;
+  --color-slate: #5E5E5E;
+  --color-stone: #8B8B8B;
+  --color-mist: #D6D6D1;
+  --color-off-white: #F6F6F3;
+  --color-white: #FFFFFF;
+  
+  --color-brand: #006870;
+  --color-brand-deep: #00545B;
+  --color-brand-active: #0B7B83;
+  --color-brand-soft: #6FA9A9;
+  
+  --color-cream: #E8E8D0;
+  --color-cream-soft: #F2F1DE;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  --shadow-subtle: 0 8px 30px rgba(0,0,0,0.06);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --background: var(--color-off-white);
+  --surface: var(--color-white);
+  --surface-secondary: #EEEEEB;
+  
+  --foreground: var(--color-ink);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-slate);
+  --text-muted: var(--color-stone);
+
+  --border: var(--color-mist);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--color-ink);
+    --surface: var(--color-black);
+    --surface-secondary: var(--color-charcoal);
+    
+    --foreground: var(--color-off-white);
+    --text-primary: var(--color-off-white);
+    --text-secondary: #A7A7A2;
+    --text-muted: var(--color-slate);
+
+    --border: var(--color-graphite);
+
+    /* Dark mode teal inversion (slightly brighter) */
+    --color-brand: var(--color-brand-soft);
+    --color-brand-deep: var(--color-brand-teal);
+    --color-brand-active: var(--color-brand-active);
+    --color-brand-soft: var(--color-brand-deep);
+    
+    --color-cream: var(--color-charcoal);
+    --color-cream-soft: var(--color-black);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply font-sans;
+    line-height: 1.6;
+    letter-spacing: normal;
+  }
+
+  /* Headings rules */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-[-0.03em] text-[var(--text-primary)];
+  }
+
+  p {
+    line-height: 1.6;
+  }
+}
+
+/* Typography Utilities */
+@layer utilities {
+  .display-xl {
+    font-size: clamp(96px, 8vw, 128px);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+  
+  .display-l {
+    font-size: clamp(72px, 6vw, 88px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  
+  .display-m {
+    font-size: clamp(56px, 5vw, 72px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  
+  .h1 { font-size: clamp(52px, 5vw, 64px); font-weight: 600; line-height: 1.1; }
+  .h2 { font-size: clamp(40px, 4vw, 48px); font-weight: 600; line-height: 1.2; }
+  .h3 { font-size: clamp(28px, 3vw, 36px); font-weight: 600; line-height: 1.3; }
+  .h4 { font-size: clamp(22px, 2.5vw, 24px); font-weight: 600; line-height: 1.4; }
+
+  .body-large { font-size: 20px; line-height: 1.5; }
+  .body-base { font-size: clamp(16px, 1.5vw, 18px); line-height: 1.6; }
+  .body-small { font-size: 14px; line-height: 1.5; }
+  .micro { font-size: 12px; line-height: 1.5; }
+
+  /* Grid Layout Utility */
+  .grid-container {
+    @apply max-w-[1440px] mx-auto w-full px-5 md:px-10 xl:px-16 lg:px-16;
+  }
+
+  .grid-12 {
+    @apply grid grid-cols-12 gap-4 md:gap-6;
+  }
+
+  /* Core UI Elements */
+  .btn-primary {
+    @apply bg-[var(--foreground)] text-[var(--background)] font-display font-medium px-6 py-3 rounded-sm transition-colors duration-200;
+  }
+  .btn-primary:hover {
+    @apply bg-brand text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-[var(--border)] text-[var(--text-primary)] font-display font-medium px-6 py-3 rounded-sm transition-colors duration-200;
+  }
+  .btn-secondary:hover {
+    @apply border-brand text-brand;
+  }
+
+  /* Signature CTA (Arrow hover effect) */
+  .group:hover .arrow-cta {
+    transform: translate(4px, -4px);
+    color: var(--color-brand);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
