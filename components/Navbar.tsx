@@ -16,10 +16,11 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Work", href: "#work" },
-    { name: "Capabilities", href: "#capabilities" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "/#about" },
+    { name: "Work", href: "/#work" },
+    { name: "Capabilities", href: "/#capabilities" },
+    { name: "Resume", href: "/resume" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   const isDark = theme === "dark";

@@ -114,8 +114,9 @@ export function Hero() {
 
       {/* Bottom Row */}
       <div className="w-full flex flex-col md:flex-row justify-between items-center mt-24 z-20">
-        <Link 
+        <a 
           href="/resume.pdf" 
+          download="Muhammad-Ajuwon-Resume.pdf"
           className="magnetic group inline-flex flex-col items-start p-4 rounded-lg hover:bg-[var(--color-brand)]/5 transition-colors duration-300 mb-8 md:mb-0 cursor-none"
         >
           <div className="flex items-center text-[var(--text-primary)] font-display font-medium leading-none mb-1">
@@ -128,7 +129,7 @@ export function Hero() {
               <ArrowUpRight className="w-4 h-4 absolute -translate-y-4 -translate-x-4 transition-transform duration-300 group-hover:translate-y-0 group-hover:translate-x-0" />
             </span>
           </div>
-        </Link>
+        </a>
         
         <span className="micro text-[var(--text-muted)] flex flex-col items-center animate-bounce">
           Scroll to explore
