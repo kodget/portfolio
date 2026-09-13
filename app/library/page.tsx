@@ -94,9 +94,9 @@ export default function LibraryPage() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-20 min-h-screen">
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20 min-h-screen overflow-x-hidden box-border">
       {/* HERO */}
-      <div className="pb-8 border-b border-[var(--border)] mb-8">
+      <div className="pb-6 sm:pb-8 border-b border-[var(--border)] mb-6 sm:mb-8">
         <div className="font-mono text-xs tracking-widest text-[var(--color-brand)] mb-4">
           A PERSONAL LIBRARY &middot; {DOMAINS.length} FIELDS &middot; CURATED FOR DEPTH
         </div>
@@ -112,11 +112,11 @@ export default function LibraryPage() {
       </div>
 
       {/* SHELF */}
-      <div className="mb-6">
+      <div className="mb-6 w-full relative">
         <div className="font-mono text-xs tracking-widest text-[var(--text-secondary)] mb-3">
           SCAN THE SHELF
         </div>
-        <div className="flex gap-2 overflow-x-auto pb-4 pt-2 snap-x border-b border-[var(--border)] scrollbar-thin">
+        <div className="flex gap-2 overflow-x-auto pb-4 pt-2 snap-x border-b border-[var(--border)] scrollbar-thin w-full box-border">
           <button
             onClick={() => handleDomainSelect('ALL')}
             className={`flex-shrink-0 snap-start w-14 h-32 rounded-t-sm flex items-center justify-center relative transition-all duration-200 border-x border-t border-[var(--border)] shadow-sm hover:-translate-y-1 ${
@@ -174,15 +174,15 @@ export default function LibraryPage() {
       </div>
 
       {/* CONTROLS */}
-      <div className="flex flex-wrap items-center gap-4 mt-8 mb-6 justify-between">
+      <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mt-8 mb-6 justify-between w-full">
         <input
           type="search"
-          placeholder="Search a title, author, or field..."
+          placeholder="Search..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="flex-grow md:flex-grow-0 md:w-64 bg-[var(--surface-secondary)] border border-[var(--border)] text-[var(--text-primary)] px-4 py-2 rounded-sm outline-none focus:border-[var(--color-brand)] transition-colors"
+          className="w-full md:w-64 bg-[var(--surface-secondary)] border border-[var(--border)] text-[var(--text-primary)] px-4 py-2 rounded-sm outline-none focus:border-[var(--color-brand)] transition-colors box-border"
         />
-        <div className="flex flex-wrap gap-2 items-center">
+        <div className="flex flex-wrap gap-2 items-center w-full md:w-auto">
           {['ALL', ...TYPES].map((ty) => (
             <button
               key={ty}
@@ -231,7 +231,7 @@ export default function LibraryPage() {
             return (
               <div
                 key={r.id}
-                className="bg-[var(--surface)] text-[var(--text-primary)] rounded-sm p-4 border border-[var(--border)] border-l-4 shadow-sm flex flex-col gap-2 relative transition-all duration-200 hover:-translate-y-1 hover:shadow-md group"
+                className="bg-[var(--surface)] text-[var(--text-primary)] rounded-sm p-4 border border-[var(--border)] border-l-4 shadow-sm flex flex-col gap-2 relative transition-all duration-200 hover:-translate-y-1 hover:shadow-md group overflow-hidden box-border"
                 style={{ borderLeftColor: primary?.color || 'var(--border)' }}
               >
                 {r.core && (
